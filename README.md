@@ -19,6 +19,10 @@ PINs:
 - Final Mission: 3838
 - Bomb deactivation: connect
 
+Current assignment:
+- HK = Tracking Units
+- Taiwan = Recovery Units
+
 Image placeholders to add/replace:
 - my-photo.jpg
 - tracking1-mission1-map.jpg / tracking1-mission1-photo.jpg
@@ -39,6 +43,6 @@ Image placeholders to add/replace:
 - recovery-final-map.jpg / recovery-final-photo.jpg
 
 Notes:
-- This is the static GitHub Pages version with the updated pre-Firebase refinements.
-- The visible title is intentionally changed to FitFam Global Session to avoid revealing the hostage storyline before the interception alert.
+- This is the static GitHub Pages version with HK/Taiwan role wording clarified.
+- Each mission now states that completing the mission helps unlock intel for the other side.
 - Firebase timestamp-based live unlock will be built next.
