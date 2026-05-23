@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FitFam Global Hostage Protocol</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function showScreen(screenId) {
+      document.querySelectorAll('.panel').forEach(function(panel) { panel.classList.add('hidden'); });
+      document.getElementById(screenId).classList.remove('hidden');
+      window.scrollTo(0,0);
+    }
+  </script>
+</head>
+<body>
+
+<h1>FITFAM GLOBAL HOSTAGE PROTOCOL</h1>
+
+<div id="globalSession" class="panel">
+  <h2>FITFAM GLOBAL SESSION 🌍</h2>
+  <p class="textBlock">Welcome to FitFam.
+
+Today’s session is a little different.
+
+Hong Kong 🤝 Taiwan
+Same time. Same energy.
+
+We sweat. We connect.
+
+Nothing complicated today.
+
+Just movement, teamwork,
+and seeing which team still has energy at the end.
+
+INSTRUCTIONS:
+
+• Complete 1 full lap around the park
+• No shortcuts 😄
+• Run it as a team
+
+Once done:
+
+Make your way back to where we began
+
+Come up with a TEAM NAME
+Take a team photo
+Post it in WhatsApp:
+
+[LOCATION] Team [NAME]
+
+Then:
+
+Continue Jumping Jacks
+until EVERY team is back
+
+No disappearing 😏
+
+TEAM RULE:
+Stay together at all times.
+Work as a team.
+No one gets left behind.</p>
+  <button onclick="showScreen('checkIn')">LET’S GO</button>
+</div>
+
+<div id="checkIn" class="panel hidden">
+  <h2>CHECK-IN</h2>
+  <p class="textBlock">✅ Team name created
+✅ Photo posted
+✅ All members present
+
+Wait for all teams.
+
+Do not proceed early.</p>
+  <button onclick="showScreen('interception')">TEAM READY ✅</button>
+</div>
+
+<div id="interception" class="panel hidden">
+  <h2>⚠️ URGENT INTERCEPTION ALERT ⚠️</h2>
+  <p class="textBlock">…incoming signal detected…
+
+…decoding…
+
+…
+
+THIS IS URGENT.
+
+This is NOT part of today’s session.
+
+A high-value individual has been taken hostage.
+
+Intel is incomplete.
+
+Fragments have been scattered.
+
+All teams are now activated.
+
+Two operations are in effect:
+
+TRACKING UNITS
+Locate and capture the hostage takers
+
+RECOVERY UNITS
+Locate and rescue the hostage
+
+No single team has full intel.
+
+Move immediately.</p>
+  <button onclick="showScreen('assignment')">CONTINUE</button>
+</div>
+
+<div id="assignment" class="panel hidden">
+  <h2>UNIT ASSIGNMENT</h2>
+  <p class="textBlock">You have been assigned a role.
+
+TRACKING UNIT
+Identify and capture the hostage takers
+
+RECOVERY UNIT
+Locate and rescue the hostage
+
+Each team will receive different instructions.
+
+Success depends on coordination.
+
+Proceed immediately.</p>
+
+  <div class="teamGrid">
+    <a class="teamButton" href="tracking1.html">TRACKING TEAM 1</a>
+    <a class="teamButton" href="tracking2.html">TRACKING TEAM 2</a>
+    <a class="teamButton" href="tracking3.html">TRACKING TEAM 3</a>
+    <a class="teamButton" href="recovery1.html">RECOVERY TEAM 1</a>
+    <a class="teamButton" href="recovery2.html">RECOVERY TEAM 2</a>
+    <a class="teamButton" href="recovery3.html">RECOVERY TEAM 3</a>
+  </div>
+</div>
+
+</body>
+</html>

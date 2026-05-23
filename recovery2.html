@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RECOVERY TEAM 2 - FitFam Global Hostage Protocol</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>RECOVERY TEAM 2</h1>
+
+<div id="mission1" class="panel">
+  <h2>MISSION 1</h2>
+  <p class="textBlock"><span class="sectionTitle">STORY</span>
+UPDATE:
+
+Movement detected.
+
+The hostage may have been relocated.
+
+Track the signal.
+
+<span class="sectionTitle">ACTION</span>
+Run to Location 1
+
+• 30 Partner Push-Up High Fives
+
+<span class="sectionTitle">VIDEO REQUIREMENT</span>
+• Record 3–5 second video
+• Entire team must be visible
+• Location must be visible
+• All team members must appear in the video
+
+<span class="sectionTitle">TEAM RULE</span>
+Stay together. No one gets left behind.
+
+<span class="sectionTitle">POST</span>
+Upload video to WhatsApp with:
+[LOCATION – HK or TW] Team [NAME]
+
+<span class="sectionTitle">RETURN</span>
+Return to HQ for PIN
+
+NO VIDEO = NO PIN</p>
+  <p class="mediaTitle">Map</p>
+  <img src="recovery2-mission1-map.jpg" class="missionImage" alt="RECOVERY TEAM 2 Mission 1 Map">
+  <p class="mediaTitle">Location Photo</p>
+  <img src="recovery2-mission1-photo.jpg" class="missionImage" alt="RECOVERY TEAM 2 Mission 1 Photo">
+  <input id="pin1" placeholder="Enter PIN 1">
+  <br>
+  <button onclick="unlockMission2()">UNLOCK INTEL + MISSION 2</button>
+</div>
+
+<div id="intel" class="panel hidden">
+  <h2>INTEL UPDATE</h2>
+  <p class="textBlock">Recovered visuals confirmed.
+
+Visual evidence secured.
+
+Location image confirmed.</p>
+  <p class="mediaTitle">PHOTO</p><img src="recovery-intel-photo.jpg" class="missionImage" alt="Recovery Intel Photo">
+  <button onclick="showScreen('mission2')">CONTINUE TO MISSION 2</button>
+</div>
+
+<div id="mission2" class="panel hidden">
+  <h2>MISSION 2</h2>
+  <p class="textBlock"><span class="sectionTitle">STORY</span>
+FINAL SIGNAL:
+
+The hostage is near.
+
+Move now.
+
+<span class="sectionTitle">ACTION</span>
+Run to Location 2
+
+• 40 Partner Squat Jump High Fives
+
+<span class="sectionTitle">VIDEO REQUIREMENT</span>
+• Record 3–5 second video
+• Entire team must be visible
+• Location must be visible
+• All team members must appear in the video
+
+<span class="sectionTitle">TEAM RULE</span>
+Stay together. No one gets left behind.
+
+<span class="sectionTitle">POST</span>
+Upload video to WhatsApp with:
+[LOCATION – HK or TW] Team [NAME]
+
+<span class="sectionTitle">RETURN</span>
+Return to HQ for PIN
+
+NO VIDEO = NO PIN</p>
+  <p class="mediaTitle">Map</p>
+  <img src="recovery2-mission2-map.jpg" class="missionImage" alt="RECOVERY TEAM 2 Mission 2 Map">
+  <p class="mediaTitle">Location Photo</p>
+  <img src="recovery2-mission2-photo.jpg" class="missionImage" alt="RECOVERY TEAM 2 Mission 2 Photo">
+  <input id="pin2" placeholder="Enter PIN 2">
+  <br>
+  <button onclick="unlockFinalMission()">UNLOCK FINAL MISSION</button>
+</div>
+
+<div id="finalMission" class="panel hidden">
+  <h2>RECOVERY FINAL MISSION</h2>
+  <p class="textBlock">Run to FINAL LOCATION.
+
+<span class="sectionTitle">OBJECTIVE</span>
+Rescue the hostage.
+
+<span class="sectionTitle">EXERCISE</span>
+• 20 Partner Burpee High Fives
+
+<span class="sectionTitle">PHOTO INSTRUCTION</span>
+• One team member acts as hostage
+• Remaining members act to rescue
+• Full team visible
+• Location visible
+
+POST to WhatsApp
+
+RETURN to HQ to unlock final phase</p>
+  <p class="mediaTitle">Final Location Map</p>
+  <img src="recovery-final-map.jpg" class="missionImage" alt="RECOVERY Final Map">
+  <p class="mediaTitle">Final Location Photo</p>
+  <img src="recovery-final-photo.jpg" class="missionImage" alt="RECOVERY Final Photo">
+  <input id="finalPin" placeholder="Enter Final PIN">
+  <br>
+  <button onclick="unlockFinalStory()">UNLOCK FINAL PHASE</button>
+</div>
+
+<div id="finalStory" class="panel hidden">
+  <h2>FINAL REPORT</h2>
+  <p class="textBlock">The operation is complete.
+
+Then—
+
+BEEP.
+
+BEEP.
+
+BEEP.
+
+A device has been triggered.
+
+A bomb.
+
+Timed.
+
+No time to move.
+
+A message appears:
+
+“You made it this far.
+
+Did you think it would be so easy.
+
+Did you think you could really survive this?”
+
+This was never just the mission.
+
+It was what connected you.
+
+Enter the code to defuse bomb.</p>
+  <button onclick="startCountdown()">DEFUSE DEVICE</button>
+</div>
+
+<div id="countdown" class="panel hidden">
+  <h2>⚠️ BOMB ACTIVE ⚠️</h2>
+  <div id="timer">02:00</div>
+  <p class="textBlock">Enter code to deactivate bomb:
+
+WE SWEAT, WE ______</p>
+  <input id="bombCode" placeholder="Enter code">
+  <br>
+  <button onclick="checkBombCode()">DEACTIVATE BOMB</button>
+</div>
+
+<div id="ending" class="panel hidden">
+  <h2>MISSION COMPLETE</h2>
+  <p id="endingText" class="textBlock"></p>
+  <button onclick="showScreen('finalMessage')">CONTINUE</button>
+</div>
+
+<div id="failure" class="panel hidden">
+  <h2>MISSION FAILED</h2>
+  <p class="textBlock">The countdown reached zero.
+
+The device activated.</p>
+</div>
+
+<div id="finalMessage" class="panel hidden">
+  <h2>FINAL MESSAGE</h2>
+  <p class="textBlock">No single team had the full picture.
+
+No single team could complete this alone.
+
+You trusted.
+You adapted.
+You executed.
+
+We sweat.
+
+We connect.</p>
+</div>
+
+<script>
+const PIN1 = "1886";
+const PIN2 = "2816";
+const FINAL_PIN = "3838";
+const BOMB_CODE = "connect";
+
+const roleEndings = ["FINAL REPORT:\n\nYou find the hostage.\n\nA child.\n\nCalm. Watching.\n\nYou step forward.\n\n\u201cWe\u2019re here to help.\u201d\n\nThe child doesn\u2019t speak.\n\nThen\u2014\n\na voice.\n\nInside your head.\n\n\u201cYou took longer than expected.\u201d\n\nYou freeze.\n\n\u201cI can hear your thoughts,\u201d the child says calmly.\n\n\u201cAnd sometimes\u2026 I answer them.\u201d\n\nYou realise immediately\u2014\n\nThis is why they were taken.\n\nChosen.\n\n\u201cThey said I could change the world.\u201d\n\nA pause.\n\n\u201cAre you taking me somewhere safe?\u201d\n\nYou nod.\n\nBefore you speak\u2014\n\n\u201cI know.\u201d\n\nExtraction complete.\n\nBut this was never just a rescue.", "FINAL REPORT:\n\nYou found them.\n\nSafe.\n\nAlive.\n\nLater\u2014\n\na message arrives.\n\n\u201cThank you.\n\nThey made it home.\u201d\n\nYou never meet them.\n\nBut you know\u2014\n\nit mattered.", "FINAL REPORT:\n\nYou reach the target.\n\nThe hostage looks up.\n\nA moment.\n\nRecognition.\n\nRelief.\n\nNo words needed.\n\nYou move fast.\n\nClean.\n\nSafe.\n\nThat moment\u2014\n\nwas enough.", "INTEL ARCHIVE:\n\n3 days ago\u2026\n\nA car.\n\nA family.\n\nLaughing.\n\nNormal.\n\nThen\u2014\n\neverything changed.\n\nThe child was taken.\n\nTaken by force.\n\nGone.\n\nThat child\u2026\n\nis the one you saved today.\n\nAnd the reason this mission existed."];
+const globalEndings = ["3 days later\u2026\n\nRecognition.\n\nBoth locations.\n\nThen\u2014\n\nall phones vibrate.\n\nNUCLEAR DEVICE IDENTIFIED\n\nACTIVATION: 10 HOURS\n\nSilence.\n\nThe mission isn\u2019t over.\n\n\u201cGear up.\u201d", "INTERNAL LOG:\n\n1 hour ago\u2026\n\nWe received the signal.\n\nWe needed units.\n\nNot trained units.\n\nReady ones.\n\nThat was you.\n\nAlready moving.\n\nAlready connected.\n\nThat\u2019s why you were chosen."];
+let timerInterval = null;
+let secondsRemaining = 120;
+
+function showScreen(screenId) {
+  document.querySelectorAll('.panel').forEach(function(panel) { panel.classList.add('hidden'); });
+  document.getElementById(screenId).classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+function unlockMission2() {
+  if (document.getElementById('pin1').value.trim() === PIN1) {
+    showScreen('intel');
+  } else { alert('ACCESS DENIED'); }
+}
+
+function unlockFinalMission() {
+  if (document.getElementById('pin2').value.trim() === PIN2) {
+    showScreen('finalMission');
+  } else { alert('ACCESS DENIED'); }
+}
+
+function unlockFinalStory() {
+  if (document.getElementById('finalPin').value.trim() === FINAL_PIN) {
+    showScreen('finalStory');
+  } else { alert('ACCESS DENIED'); }
+}
+
+function startCountdown() {
+  secondsRemaining = 120;
+  updateTimerDisplay();
+  showScreen('countdown');
+  timerInterval = setInterval(function() {
+    secondsRemaining--;
+    if (secondsRemaining <= 0) {
+      secondsRemaining = 0;
+      updateTimerDisplay();
+      clearInterval(timerInterval);
+      timerInterval = null;
+      showScreen('failure');
+      return;
+    }
+    updateTimerDisplay();
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(secondsRemaining / 60);
+  const seconds = secondsRemaining % 60;
+  document.getElementById('timer').innerText = String(minutes).padStart(2,'0') + ':' + String(seconds).padStart(2,'0');
+}
+
+function checkBombCode() {
+  const answer = document.getElementById('bombCode').value.trim().toLowerCase();
+  if (answer === BOMB_CODE) {
+    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+    showRandomEnding();
+  } else { alert('ACCESS DENIED'); }
+}
+
+function showRandomEnding() {
+  let pool = roleEndings;
+  if (Math.random() < 0.15) {
+    pool = globalEndings;
+  }
+  const selected = pool[Math.floor(Math.random() * pool.length)];
+  document.getElementById('endingText').innerText = selected;
+  showScreen('ending');
+}
+</script>
+</body>
+</html>
