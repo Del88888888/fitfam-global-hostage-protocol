@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FitFam Global Hostage Protocol</title>
+  <title>FitFam Global Session</title>
   <link rel="stylesheet" href="style.css">
   <script>
     function showScreen(screenId) {
@@ -9,11 +9,21 @@
       document.getElementById(screenId).classList.remove('hidden');
       window.scrollTo(0,0);
     }
+    function unlockInterception() {
+      const pin = document.getElementById("readyPinInput").value.trim();
+      if (pin === "0101") {
+        showScreen("interception");
+      } else {
+        alert("ACCESS DENIED");
+      }
+    }
   </script>
 </head>
 <body>
 
-<h1>FITFAM GLOBAL HOSTAGE PROTOCOL</h1>
+<img src="my-photo.jpg" id="cornerLogo">
+
+<h1>FITFAM GLOBAL SESSION</h1>
 
 <div id="globalSession" class="panel">
   <h2>FITFAM GLOBAL SESSION 🌍</h2>
@@ -31,7 +41,7 @@ Nothing complicated today.
 Just movement, teamwork,
 and seeing which team still has energy at the end.
 
-INSTRUCTIONS:
+<span class="sectionTitle">INSTRUCTIONS</span>
 
 • Complete 1 full lap around the park
 • No shortcuts 😄
@@ -54,7 +64,7 @@ until EVERY team is back
 
 No disappearing 😏
 
-TEAM RULE:
+<span class="sectionTitle">TEAM RULE</span>
 Stay together at all times.
 Work as a team.
 No one gets left behind.</p>
@@ -69,8 +79,12 @@ No one gets left behind.</p>
 
 Wait for all teams.
 
-Do not proceed early.</p>
-  <button onclick="showScreen('interception')">TEAM READY ✅</button>
+Do not proceed early.
+
+HQ will provide the readiness PIN when every team is ready.</p>
+  <input id="readyPinInput" placeholder="Readiness PIN">
+  <br>
+  <button onclick="unlockInterception()">TEAM READY ✅</button>
 </div>
 
 <div id="interception" class="panel hidden">
@@ -122,7 +136,6 @@ Each team will receive different instructions.
 Success depends on coordination.
 
 Proceed immediately.</p>
-
   <div class="teamGrid">
     <a class="teamButton" href="tracking1.html">TRACKING TEAM 1</a>
     <a class="teamButton" href="tracking2.html">TRACKING TEAM 2</a>

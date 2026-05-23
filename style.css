@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 30px;
@@ -36,7 +35,12 @@ input {
 }
 .hidden { display: none; }
 .textBlock { white-space: pre-line; line-height: normal; }
-.sectionTitle { color: #ffd200; font-weight: bold; text-transform: uppercase; }
+.sectionTitle {
+  color: #ffd200;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 52px;
+}
 .missionImage {
   width: 100%;
   max-width: 760px;
@@ -45,7 +49,6 @@ input {
   display: block;
 }
 .mediaTitle { color: #ffd200; font-weight: bold; margin-top: 20px; margin-bottom: 10px; }
-.smallNote { font-size: 32px; color: #ccc; }
 #timer { font-size: 90px; color: #ffd200; font-weight: bold; margin: 20px 0; }
 .teamGrid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .teamButton { display: block; text-decoration: none; background: #ffd200; color: #000; padding: 20px; font-weight: bold; }

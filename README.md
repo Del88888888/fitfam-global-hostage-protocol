@@ -1,4 +1,4 @@
-# FitFam Global Hostage Protocol
+# FitFam Global Session
 
 Upload all files to a GitHub Pages repo.
 
@@ -13,12 +13,14 @@ Core files:
 - recovery3.html
 
 PINs:
+- Readiness PIN before interception: 0101
 - Mission 1: 1886
 - Mission 2: 2816
 - Final Mission: 3838
 - Bomb deactivation: connect
 
 Image placeholders to add/replace:
+- my-photo.jpg
 - tracking1-mission1-map.jpg / tracking1-mission1-photo.jpg
 - tracking1-mission2-map.jpg / tracking1-mission2-photo.jpg
 - tracking2-mission1-map.jpg / tracking2-mission1-photo.jpg
@@ -37,5 +39,6 @@ Image placeholders to add/replace:
 - recovery-final-map.jpg / recovery-final-photo.jpg
 
 Notes:
-- This is the static GitHub Pages version. It does not automatically know which team returns first. Intel is assigned by page/team.
-- For true real-time first/second/third unlock order across locations, a Firebase version can be built later.
+- This is the static GitHub Pages version with the updated pre-Firebase refinements.
+- The visible title is intentionally changed to FitFam Global Session to avoid revealing the hostage storyline before the interception alert.
+- Firebase timestamp-based live unlock will be built next.
