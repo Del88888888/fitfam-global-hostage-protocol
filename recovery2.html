@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html><head><title>TAIWAN RECOVERY TEAM 2 - FitFam Global Session</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"></head>
-<body><img src="my-photo.jpg" id="cornerLogo" alt="FitFam Logo"><h1>TAIWAN RECOVERY TEAM 2</h1>
+<html><head><title>TAIWAN RECOVERY TEAM 2 - FitFam Global Session</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css?v=20260524c"></head>
+<body><img src="my-photo.jpg" id="cornerLogo" alt="FitFam Logo">
+<audio id="finalReportSound" src="final-report.mp3" preload="auto"></audio>
+<audio id="bombSound" src="bomb-countdown.mp3" preload="auto" loop></audio>
+<audio id="endingMusic" src="ending-music.mp3" preload="auto" loop></audio>
+<h1>TAIWAN RECOVERY TEAM 2</h1>
 <div id="mission1" class="panel"><h2>MISSION 1</h2><p class="textBlock"><span class="sectionTitle">STORY</span>
 UPDATE:
 Movement detected.
@@ -83,9 +87,9 @@ you now require the final access PIN from Hong Kong.
 
 Without the intel from Hong Kong—
 
-you CANNOT proceed to rescue the hostage.</p><div class="transmissionBox"><h2>📡 TRANSMISSION REQUIRED</h2><p class="textBlock">You must send this message to the other side now.</p><div class="instructionBox"><p><strong>INSTRUCTIONS:</strong></p><p>1. Tap COPY MESSAGE</p><p>2. Tap OPEN WHATSAPP</p><p>3. Paste the message into your team WhatsApp group chat</p><p>4. Send immediately</p><p class="warningText">Do NOT edit the message.</p><p class="warningText">You CANNOT proceed without it.</p></div><pre id="copyText" class="copyMessage">TARGET LOCKED
+you CANNOT proceed to rescue the hostage.</p><div class="transmissionBox"><h2>📡 TRANSMISSION REQUIRED</h2><p class="textBlock">You must send this message to the other side now.</p><div class="instructionBox"><p><strong>INSTRUCTIONS:</strong></p><p>1. Tap COPY MESSAGE</p><p>2. Open your team WhatsApp group chat</p><p>3. Paste the message</p><p>4. Send immediately</p><p class="warningText">Do NOT edit the message.</p><p class="warningText">You CANNOT proceed without it.</p></div><pre id="copyText" class="copyMessage">TARGET LOCKED
 PIN TO UNLOCK FINAL HK MISSION IS 3838
-TRANSMIT IMMEDIATELY</pre><button onclick="copyMessage()" class="copyButton">COPY MESSAGE 📋</button><p id="copyStatus" class="copyStatus"></p><a class="whatsappButton" href="https://wa.me/?text=TARGET%20LOCKED%0APIN%20TO%20UNLOCK%20FINAL%20HK%20MISSION%20IS%203838%0ATRANSMIT%20IMMEDIATELY" target="_blank" rel="noopener">OPEN WHATSAPP 📲</a></div><div class="accessBox"><h2>AWAITING FINAL ACCESS PIN</h2><p class="textBlock">Wait for the final access PIN from Hong Kong in WhatsApp.
+TRANSMIT IMMEDIATELY</pre><button onclick="copyMessage()" class="copyButton">COPY MESSAGE 📋</button><p id="copyStatus" class="copyStatus"></p></div><div class="accessBox"><h2>AWAITING FINAL ACCESS PIN</h2><p class="textBlock">Wait for the final access PIN from Hong Kong in WhatsApp.
 
 Enter the PIN below only after the message is received.</p><input id="crossPin" placeholder="Enter PIN from Hong Kong"><br><button onclick="unlockFinalMission()">UNLOCK FINAL MISSION</button></div></div>
 <div id="finalMission" class="panel hidden"><h2>TAIWAN RECOVERY FINAL MISSION</h2><p class="textBlock"><span class="sectionTitle">STORY</span>
@@ -147,10 +151,13 @@ You executed.
 We sweat.
 We connect.</p></div>
 <script>
-const PIN1="1886", PIN2="2816", FINAL_PIN="3838", CROSS_PIN="3339", BOMB_CODE="connect";
+const PIN1="1886", PIN2="2816", FINAL_PIN="4832", CROSS_PIN="3339", BOMB_CODE="connect";
 const roleEndings=["FINAL REPORT:\n\nYou find the hostage.\n\nA child.\n\nCalm. Watching.\n\nYou step forward.\n\n“We’re here to help.”\n\nThe child doesn’t speak.\n\nThen—\n\na voice.\n\nInside your head.\n\n“You took longer than expected.”\n\nYou freeze.\n\n“I can hear your thoughts,” the child says calmly.\n\n“And sometimes… I answer them.”\n\nYou realise immediately—\n\nThis is why they were taken.\n\nChosen.\n\n“They said I could change the world.”\n\nA pause.\n\n“Are you taking me somewhere safe?”\n\nYou nod.\n\nBefore you speak—\n\n“I know.”\n\nExtraction complete.\n\nBut this was never just a rescue.", "FINAL REPORT:\n\nYou found them.\n\nSafe.\n\nAlive.\n\nLater—\n\na message arrives.\n\n“Thank you.\n\nThey made it home.”\n\nYou never meet them.\n\nBut you know—\n\nit mattered.", "FINAL REPORT:\n\nYou reach the target.\n\nThe hostage looks up.\n\nA moment.\n\nRecognition.\n\nRelief.\n\nNo words needed.\n\nYou move fast.\n\nClean.\n\nSafe.\n\nThat moment—\n\nwas enough.", "INTEL ARCHIVE:\n\n3 days ago…\n\nA car.\n\nA family.\n\nLaughing.\n\nNormal.\n\nThen—\n\neverything changed.\n\nThe child was taken.\n\nTaken by force.\n\nGone.\n\nThat child…\n\nis the one you saved today.\n\nAnd the reason this mission existed."]; const globalEndings=["3 days later…\n\nRecognition.\n\nBoth locations.\n\nThen—\n\nall phones vibrate.\n\nNUCLEAR DEVICE IDENTIFIED\n\nACTIVATION: 10 HOURS\n\nSilence.\n\nThe mission isn’t over.\n\n“Gear up.”", "INTERNAL LOG:\n\n1 hour ago…\n\nWe received the signal.\n\nWe needed units.\n\nNot trained units.\n\nReady ones.\n\nThat was you.\n\nAlready moving.\n\nAlready connected.\n\nThat’s why you were chosen."];
 let timerInterval=null, secondsRemaining=120;
-function showScreen(id){document.querySelectorAll('.panel').forEach(p=>p.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo(0,0);}
+function safePlay(id, restart=true){const a=document.getElementById(id);if(!a)return;if(restart)a.currentTime=0;a.play().catch(function(){});}
+function safeStop(id){const a=document.getElementById(id);if(!a)return;a.pause();a.currentTime=0;}
+function handleAudio(id){if(id==='countdown'){safeStop('endingMusic');safePlay('bombSound');}else if(id==='finalStory'){safeStop('bombSound');safeStop('endingMusic');safePlay('finalReportSound');}else if(id==='ending'||id==='finalMessage'){safeStop('bombSound');safePlay('endingMusic', false);}else if(id==='failure'){safeStop('bombSound');}}
+function showScreen(id){document.querySelectorAll('.panel').forEach(p=>p.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');handleAudio(id);window.scrollTo(0,0);}
 function startTransmission(){showScreen('transmission');document.getElementById('transmissionStatus').innerText='TRANSMISSION IN PROGRESS…';document.getElementById('mission2Button').classList.add('hidden');setTimeout(function(){document.getElementById('transmissionStatus').innerText='✅ COMPLETE';document.getElementById('mission2Button').classList.remove('hidden');},1800);}
 function copyMessage(){const text=document.getElementById('copyText').innerText.trim(); if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>document.getElementById('copyStatus').innerText='✅ Message copied. Open WhatsApp and paste now.').catch(()=>fallbackCopy(text));}else{fallbackCopy(text);}}
 function fallbackCopy(text){const area=document.createElement('textarea');area.value=text;document.body.appendChild(area);area.select();document.execCommand('copy');document.body.removeChild(area);document.getElementById('copyStatus').innerText='✅ Message copied. Open WhatsApp and paste now.';}
