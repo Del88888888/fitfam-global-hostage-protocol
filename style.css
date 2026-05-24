@@ -7,8 +7,39 @@ body {
   text-align: center;
   font-size: 42px;
 }
+
+body.funTheme {
+  background: linear-gradient(135deg, #ff7a18, #ffdd00, #00d084, #00a3ff, #9b5cff, #ff4ecd);
+  background-size: 400% 400%;
+  animation: funGradient 12s ease infinite;
+  color: #1b1b1b;
+}
+
+@keyframes funGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 h1 { font-size: 64px; color: #ffd200; }
 h2 { font-size: 52px; color: #ffd200; }
+
+body.funTheme h1 {
+  color: #ffffff;
+  text-shadow: 3px 3px 0 #ff4ecd, 6px 6px 0 #00a3ff;
+}
+
+.funTitle {
+  font-size: 64px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff005d, #ff9f00, #ffee00, #00c853, #00b0ff, #7c4dff, #ff005d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
 .panel {
   border: 3px solid #444;
   padding: 30px;
@@ -16,6 +47,16 @@ h2 { font-size: 52px; color: #ffd200; }
   max-width: 900px;
   background: #111;
 }
+
+.funPanel {
+  border: 5px solid #ffffff;
+  background: rgba(255,255,255,0.92);
+  color: #1b1b1b;
+  box-shadow: 0 0 30px rgba(255,255,255,0.65);
+}
+
+.funPanel h2 { color: #1b1b1b; }
+
 button {
   font-size: 42px;
   padding: 20px 40px;
@@ -25,6 +66,14 @@ button {
   border: none;
   cursor: pointer;
 }
+
+body.funTheme button {
+  background: linear-gradient(90deg, #ff005d, #ff9f00, #ffee00, #00c853, #00b0ff, #7c4dff);
+  color: #000;
+  font-weight: bold;
+  border: 4px solid #ffffff;
+}
+
 input {
   font-size: 42px;
   padding: 20px;
@@ -37,6 +86,12 @@ input {
 .textBlock { white-space: pre-line; line-height: normal; }
 .sectionTitle {
   color: #ffd200;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 52px;
+}
+.funPanel .sectionTitle {
+  color: #ff005d;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 52px;
@@ -61,4 +116,7 @@ input {
   border: 3px solid #ffd200;
   z-index: 1000;
   pointer-events: none;
+}
+body.funTheme #cornerLogo {
+  border: 4px solid #ffffff;
 }

@@ -7,6 +7,21 @@
     function showScreen(screenId) {
       document.querySelectorAll('.panel').forEach(function(panel) { panel.classList.add('hidden'); });
       document.getElementById(screenId).classList.remove('hidden');
+
+      if (screenId === 'globalSession' || screenId === 'checkIn') {
+        document.body.classList.add('funTheme');
+      } else {
+        document.body.classList.remove('funTheme');
+      }
+
+      if (screenId === 'interception') {
+        const alertSound = document.getElementById('alertSound');
+        if (alertSound) {
+          alertSound.currentTime = 0;
+          alertSound.play().catch(function() {});
+        }
+      }
+
       window.scrollTo(0,0);
     }
     function unlockInterception() {
@@ -17,16 +32,20 @@
         alert("ACCESS DENIED");
       }
     }
+    window.onload = function() {
+      document.body.classList.add('funTheme');
+    };
   </script>
 </head>
-<body>
+<body class="funTheme">
 
 <img src="my-photo.jpg" id="cornerLogo">
+<audio id="alertSound" src="alert.mp3" preload="auto"></audio>
 
 <h1>FITFAM GLOBAL SESSION</h1>
 
-<div id="globalSession" class="panel">
-  <h2>FITFAM GLOBAL SESSION 🌍</h2>
+<div id="globalSession" class="panel funPanel">
+  <h2 class="funTitle">FitFam Fun Olympics 🌈</h2>
   <p class="textBlock">Welcome to FitFam.
 
 Today’s session is a little different.
@@ -71,8 +90,8 @@ No one gets left behind.</p>
   <button onclick="showScreen('checkIn')">LET’S GO</button>
 </div>
 
-<div id="checkIn" class="panel hidden">
-  <h2>CHECK-IN</h2>
+<div id="checkIn" class="panel funPanel hidden">
+  <h2 class="funTitle">Team Check-In ✅</h2>
   <p class="textBlock">✅ Team name created
 ✅ Photo posted
 ✅ All members present
