@@ -20,4 +20,6 @@ Assets:
 Notes:
 - First page and check-in page use a fun rainbow theme.
 - Interception and all later pages switch back to the black/yellow serious mission theme.
+- Intel pages now show UPLINK ESTABLISHED / TRANSMISSION IN PROGRESS / TRANSMISSION COMPLETE.
+- Transmission beeps are generated in-browser; no extra audio file required.
 - Firebase timestamp-based live unlock will be built next.

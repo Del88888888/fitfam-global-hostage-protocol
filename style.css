@@ -67,6 +67,11 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 body.funTheme button {
   background: linear-gradient(90deg, #ff005d, #ff9f00, #ffee00, #00c853, #00b0ff, #7c4dff);
   color: #000;
@@ -119,4 +124,16 @@ input {
 }
 body.funTheme #cornerLogo {
   border: 4px solid #ffffff;
+}
+.transmissionBox {
+  border: 3px solid #ffd200;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 760px;
+  background: #050505;
+  color: #ffd200;
+  font-weight: bold;
+}
+.transmissionComplete {
+  color: #00ff88;
 }
